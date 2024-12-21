@@ -10,11 +10,15 @@
 # See /LICENSE for more information.
 #
 
-# Modify default IP
-sed -i 's/192.168.1.1/192.168.199.1/g' package/base-files/files/bin/config_generate
-
 # Modify default theme
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # Modify hostname
-sed -i 's/OpenWrt/iStoreOS/g' package/base-files/files/bin/config_generate
+sed -i 's/LEDE/OpenWrt/g' package/base-files/files/bin/config_generate
+sed -i 's/LEDE/OpenWrt/g' package/base-files/files/etc/init.d/system
+sed -i 's/LEDE/OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/LEDE/OpenWrt/g' package/base-files/luci2/bin/config_generate
+sed -i 's/LEDE/iStoreOS/g' package/lean/default-settings/files/zzz-default-settings
+
+
+mv banner  package/base-files/files/etc/banner
